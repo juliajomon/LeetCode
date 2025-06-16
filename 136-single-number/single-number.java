@@ -1,16 +1,9 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        Arrays.sort(nums);
-        int j = 1;
-        if(nums.length == 1){
-            return nums[0];
+        int result = 0;
+        for(int num : nums){
+            result ^= num ;
         }
-        for(int i = 0 ; i < nums.length -1 ; i= i+2){
-            if(nums[i] != nums[i+1]){
-                return nums[i];
-            }
-            
-        }
-        return nums[nums.length -1];
+        return result;
     }
 }
